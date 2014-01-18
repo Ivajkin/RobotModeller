@@ -5,9 +5,5 @@ class direction {
     ydir = yelement * invertedLength;
     zdir = zelement * invertedLength;
   }
-  direction multiply(int i) {
-    direction dir2 = new direction(xdir*i, ydir*i, zdir*i);
-    return dir2;
-  }
   float xdir, ydir, zdir;
 }

@@ -1,11 +1,20 @@
 
 class Robot {
   Robot() {
+    legs = new Leg[legCount];
+    for(int i = 0; i < legCount; ++i) {
+      direction where = new direction(random(1)-0.5,random(1)-0.5,random(1)-0.5);
+      legs[i] = new Leg(center.add(where,28), where);
+    }
   }
   void draw() {
-    translate(58, 48, 0);
+    //translate(400, 400, 0);
     sphere(28);
-    leg.draw();
+    for(int i = 0; i < legCount; ++i) {
+      legs[i].draw();
+    }
   }
-  Leg leg = new Leg(new position(0,0,0), new direction(1,1,1));
+  int legCount = 100;
+  Leg[] legs;
+  position center = new position(0,0,0);
 }
