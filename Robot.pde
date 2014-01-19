@@ -14,6 +14,11 @@ class Robot {
       legs[i].draw();
     }
   }
+  void update() {
+    for(int i = 0; i < legCount; ++i) {
+      legs[i].update();
+    }
+  }
   int legCount = 100;
   Leg[] legs;
   position center = new position(0,0,0);
